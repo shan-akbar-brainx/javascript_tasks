@@ -15,9 +15,9 @@
               let len = x.length;
               let i = 0;
               let elementId = "message";
-              let endLoop = false;
               let buttonCheck = true;
-              while (true){
+              
+              for(;true; i++){
                 x[i].style.borderColor= "black";
                 document.getElementById(elementId+(i+1)).innerHTML = "";
                
@@ -102,13 +102,10 @@
                   }
 
                 }
-                ++i;
-                if(endLoop){
-                  break;
-                }
-
+                
+                
                 if(id == x[i]){
-                  endLoop=true;
+                  break;
                 }
               }
 
