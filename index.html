@@ -1,5 +1,8 @@
 <html>
     <head>
+      <title>Form</title>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
@@ -93,13 +96,15 @@
                 }else if(x[i].name == "pass2"){
                   document.getElementById(elementId+(i+1)).style.color="red";
                   pass = document.forms['myForm']['pass'].value;
-                  if(!(x[i].value === pass)){
-                    document.getElementById(elementId+(i+1)).innerHTML = "Password didn't matched !";
-                    buttonCheck = false;
-                  }else{
-                    document.getElementById(elementId+(i+1)).style.color="green";
-                    document.getElementById(elementId+(i+1)).innerHTML = "Password matched";
-                  }
+                  if(!(pass==="")){
+                    if(!(x[i].value === pass)){
+                      document.getElementById(elementId+(i+1)).innerHTML = "Password didn't matched !";
+                      buttonCheck = false;
+                    }else{
+                      document.getElementById(elementId+(i+1)).style.color="green";
+                      document.getElementById(elementId+(i+1)).innerHTML = "Password matched";
+                    }
+                 }
 
                 }
                 
@@ -126,7 +131,7 @@
     <body>
         <h1 class="text-center">My Form</h1>
         <div class="my-container">
-            <form name="myForm" action="/action_page.php" method="post">
+            <form name="myForm" action="#" method="post">
                 First Name: <input  onkeyup="validateForm(this)" oninput="validateForm(this)" type="text" name="fname">
                 <p id="message1"></p>
                 Last Name: <input  onkeyup="validateForm(this)" oninput="validateForm(this)" type="text" name="lname">
