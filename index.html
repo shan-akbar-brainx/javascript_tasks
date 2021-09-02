@@ -50,10 +50,12 @@
                           }
                       }
                 }else if(x[i].name == "phone"){
-                  if(!(x[i].value.length == 11)){
-                    document.getElementById(elementId+(i+1)).style.color="red";
-                    document.getElementById(elementId+(i+1)).innerHTML = "phone number length should be '11' !";
-                    buttonCheck = false;
+                  if(x[i].value!==""){
+                    if(!(x[i].value.length == 11)){
+                      document.getElementById(elementId+(i+1)).style.color="red";
+                      document.getElementById(elementId+(i+1)).innerHTML = "phone number length should be '11' !";
+                      buttonCheck = false;
+                    }
                   }
                 }else if(x[i].name == "pass"){
                   document.getElementById(elementId+(i+1)).style.color="red";
@@ -114,11 +116,19 @@
                 }
               }
 
-                document.getElementById("btn1").disabled = true;
-           
-                  if(buttonCheck){
-                    document.getElementById("btn1").disabled = false;
+              for(let k = 0 ; k < 7 ; k++){
+                if(x[k].name !=="phone"){
+                  if(x[k].value===""){
+                    buttonCheck = false;
+                    break;
                   }
+                }
+            }
+            document.getElementById("btn1").disabled = true;
+      
+            if(buttonCheck){
+              document.getElementById("btn1").disabled = false;
+            }
 
       
        
