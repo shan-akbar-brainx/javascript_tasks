@@ -1,0 +1,14 @@
+.my-container {
+    display: block;
+    width: 50%;
+    margin: auto;
+    max-width: 400px;
+  }
+input {
+    border: 2px solid black;
+    border-radius: 5px;
+    margin: auto;
+    width: 100%;
+    padding: auto;
+
+}
